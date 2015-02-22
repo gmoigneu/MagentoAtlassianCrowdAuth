@@ -1,4 +1,5 @@
 <?php
+
 class Nls_Crowd_Model_Observer
 {
     protected $request;
@@ -13,28 +14,19 @@ class Nls_Crowd_Model_Observer
         $postLogin = $this->request->getPost('login');
 
         // The user has just completed the login form
-        if ( false && !is_null($postLogin)) {
+        if (!is_null($postLogin)) {
             $username = isset($postLogin['username']) ? $postLogin['username'] : '';
             $password = isset($postLogin['password']) ? $postLogin['password'] : '';
-
             // Is Crowd auth enabled and are Crowd credentials available ?
-            if (true) {
-
-            }
-
-
-            //
-
-            $providers = Mage::getStoreConfig(self::CONFIG_PATH_LOGIN_PROVIDERS);
-            foreach ($providers as $provider) {
-                /* @var $provider Hackathon_LoginProviderFramework_Interface_LoginProviderInterface */
-                $provider = Mage::getModel($provider);
-                if ($provider->authenticate($username, $password)) {
-                    $this->userAuthenticated($username, $provider->getRoleForUser($username));
-                }
+            if (Mage::getConfig(self::CONFIG_PATH_CROWD_ENABLED)) {
+                $crowd = new Nls_Crowd_Model_Crowd(
+                    Mage::getStoreConfig(self::CONFIG_PATH_CROWD_URL),
+                    Mage::getStoreConfig(self::CONFIG_PATH_CROWD_APP_NAME),
+                    Mage::getStoreConfig(self::CONFIG_PATH_CROWD_APP_PASSWORD)
+                );
+                $crowd->authenticate($username, $password);
             }
         }
-        //die('test2');
     }
     protected function userAuthenticated($username, $role)
     {
