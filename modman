@@ -1,0 +1,3 @@
+# Nls_Crowd, Atlassian Crowd auth for Magento backend
+code                   app/code/local/Nls/Crowd/
+Nls_Crowd.xml          app/etc/modules/Nls_Crowd.xml

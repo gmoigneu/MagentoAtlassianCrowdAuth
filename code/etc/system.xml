@@ -1,0 +1,64 @@
+<config>
+    <tabs>
+        <nls_crowd translate="label" module="nls_crowd">
+            <label>Crowd Authentification</label>
+            <sort_order>99999</sort_order>
+        </nls_crowd>
+    </tabs>
+    <sections>
+        <nls_crowd translate="label" module="nls_crowd">
+            <class>separator-top</class>
+            <label>Crowd Authentification</label>
+            <tab>advanced</tab> <!-- the important one -->
+            <sort_order>999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <config translate="label">
+                    <label>Crowd Server</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled>
+                            <label>Enable Crowd Authentification ?</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enabled>
+                        <service_url>
+                            <label>Service URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </service_url>
+                        <app_name>
+                            <label>Application Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </app_name>
+                        <app_credential>
+                            <label>Application Credential</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </app_credential>
+                    </fields>
+                </config>
+            </groups>
+        </nls_crowd>
+    </sections>
+</config>

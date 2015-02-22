@@ -1,0 +1,9 @@
+<config>
+    <modules>
+        <Nls_Crowd>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends/>
+        </Nls_Crowd>
+    </modules>
+</config>
